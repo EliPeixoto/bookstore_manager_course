@@ -18,7 +18,7 @@ public class AuthorEntity {
     private Long id;
 
     @Column(nullable=false, unique = true)
-    private Long name;
+    private String name;
 
     @Column(nullable=false)
     private Integer age;

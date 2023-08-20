@@ -1,17 +1,11 @@
 package com.elianepeixoto.bookstoremanager.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data //Getter, Setter, Equals, Hashcode
-@Builder
-@NoArgsConstructor // construtor sem argumentos
-@AllArgsConstructor // construtor com argumentos
+@Data
 
 public class BookEntity {
    @Id
@@ -35,7 +29,7 @@ public class BookEntity {
 
    @ManyToOne(fetch=FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
    @JoinColumn(name= "author_id")
-    private Author author;
+    private AuthorEntity author;
 
 
 }
